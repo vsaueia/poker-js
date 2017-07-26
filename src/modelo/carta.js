@@ -2,6 +2,7 @@ import {Naipe} from './naipe';
 
 const BASE = 10;
 export class Carta {
+  static As = 14;
   constructor(representacao) {
     let valor = representacao.charAt(0);
     if (!isNaN(parseInt(valor, BASE))) {
@@ -18,7 +19,7 @@ export class Carta {
     case 'J': return 11;
     case 'Q': return 12;
     case 'K': return 13;
-    case 'A': return 14;
+    case 'A': return Carta.As;
     default: throw new Error('valor da carta não identificado');
     }
   }

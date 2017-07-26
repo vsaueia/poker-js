@@ -1,4 +1,5 @@
 import { Carta } from './carta';
+import { Croupier } from './croupier';
 
 export class MaoDoJogador {
   constructor(nomeDoJogador, cartas) {
@@ -6,6 +7,7 @@ export class MaoDoJogador {
     this.validarQuantidadeDeCartas(cartas);
     this.cartas = cartas;
     this.nomeDoJogador = nomeDoJogador;
+    this.croupier = new Croupier();
   }
 
   validarQuantidadeDeCartas(cartas) {
@@ -18,5 +20,14 @@ export class MaoDoJogador {
     if (!(cartas instanceof Array) || !(cartas[0] instanceof Carta)) {
       throw new Error('entrada inválida');
     }
+  }
+
+  calcularJogada() {
+    return this.croupier.avaliarJogada(this);
+  }
+
+  obterValoresDasCartasEmOrdemCrescente() {
+    let valores = this.cartas.map(carta => carta.valor);
+    return valores.sort((a, b) => a - b);
   }
 }
