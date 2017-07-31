@@ -1,0 +1,2 @@
+describe('Avaliador de Jogadas', () => {
+});

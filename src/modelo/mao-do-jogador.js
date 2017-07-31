@@ -1,5 +1,5 @@
 import { Carta } from './carta';
-import { Croupier } from './croupier';
+import { AvaliadorDeJogadas } from './avaliador-de-jogadas';
 
 export class MaoDoJogador {
   constructor(nomeDoJogador, cartas) {
@@ -7,7 +7,7 @@ export class MaoDoJogador {
     this.validarQuantidadeDeCartas(cartas);
     this.cartas = cartas;
     this.nomeDoJogador = nomeDoJogador;
-    this.croupier = new Croupier();
+    this.avaliadorDeJogadas = new AvaliadorDeJogadas();
   }
 
   validarQuantidadeDeCartas(cartas) {
@@ -23,7 +23,7 @@ export class MaoDoJogador {
   }
 
   calcularJogada() {
-    return this.croupier.avaliarJogada(this);
+    return this.avaliadorDeJogadas.avaliarJogada(this);
   }
 
   obterValoresDasCartasEmOrdemCrescente() {
