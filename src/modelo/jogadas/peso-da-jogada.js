@@ -1,7 +1,10 @@
 export class PesoDaJogada {
-  static RoyalStraightFlush = 5;
-  static StraightFlush = 4;
-  static Quadra = 3;
-  static Flush = 2;
-  static Sequencia = 1;
+  static RoyalStraightFlush = 9;
+  static StraightFlush = 8;
+  static Quadra = 7;
+  static FullHouse = 6;
+  static Flush = 5;
+  static Sequencia = 4;
+  static Trinca = 3;
+  static Dupla = 1;
 }

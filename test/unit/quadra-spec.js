@@ -27,6 +27,6 @@ describe('Quadra', () => {
 
     let pesoDaJogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBe(0);
+    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.Quadra);
   });
 });
