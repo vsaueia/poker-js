@@ -27,7 +27,7 @@ describe('straight flush', () => {
 
     let pesoDaJogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBe(0);
+    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.StraightFlush);
   });
 
   it('nao deve casar com straight flush, cartas nao sao do mesmo naipe', () => {
@@ -36,6 +36,6 @@ describe('straight flush', () => {
 
     let pesoDaJogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBe(0);
+    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.StraightFlush);
   });
 });
