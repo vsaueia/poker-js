@@ -1,16 +1,10 @@
 import { PesoDaJogada } from 'modelo/jogadas/peso-da-jogada';
+import { JogadaBase } from './jogada-base';
 
-export class Trinca {
+export class Trinca extends JogadaBase {
   static testarJogada(maoDoJogador) {
-    let valoresDasCartas = maoDoJogador.obterValoresDasCartasEmOrdemCrescente();
-    let contagemDeCartas = [];
-    for (let i = 0; i < 14; i++) {
-      contagemDeCartas[i] = 0;
-    }
-    valoresDasCartas.forEach(valorDaCarta => contagemDeCartas[valorDaCarta] += 1);
-
+    let contagemDeCartas = this.obterContagemDeCartas(maoDoJogador);
     let ehTrinca = contagemDeCartas.find(contagem => contagem === 3) !== undefined;
-
     return ehTrinca ? PesoDaJogada.Trinca : 0;
   }
 }
