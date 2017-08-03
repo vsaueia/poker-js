@@ -20,4 +20,12 @@ describe('Sequencia', () => {
 
     expect(pesoDaJogada).toBeLessThan(PesoDaJogada.Flush);
   });
+
+  it('nao deve casar com sequencia', () => {
+    let cartas = LeitorDeCartas.obterCartas('TO TC QC KO 9C');
+    let maoDoJogador = new MaoDoJogador('jogador1', cartas);
+
+    let pesoDaJogada = maoDoJogador.calcularJogada();
+    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.Sequencia);
+  });
 });

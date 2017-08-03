@@ -13,7 +13,7 @@ describe('royal straight flush', () => {
   });
 
   it('deve casar com royal straight flush, cartas fora de ordem', () => {
-    let cartas = LeitorDeCartas.obterCartas('KO JO TO AO KO');
+    let cartas = LeitorDeCartas.obterCartas('KO JO TO AO QO');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
     let pesoDaJogada = maoDoJogador.calcularJogada();

@@ -6,5 +6,6 @@ export class PesoDaJogada {
   static Flush = 5;
   static Sequencia = 4;
   static Trinca = 3;
+  static DuasDuplas = 2;
   static Dupla = 1;
 }
