@@ -8,7 +8,7 @@ export class Sequencia {
     for (let i = 0; i < cartasOrdenadas.length - 1; i++) {
       let cartaAtual = cartasOrdenadas[i];
       let proximaCarta = cartasOrdenadas[i + 1];
-      if ((cartaAtual + 1) !== proximaCarta) {
+      if (proximaCarta - cartaAtual !== 1) {
         ehSequencia = false;
         break;
       }
