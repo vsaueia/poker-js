@@ -21,7 +21,8 @@ export class AvaliadorDeJogadas {
       if (jogada > 0) {
         return {
           nomeDaJogada: this.catalogoDeJogadas[i].name,
-          pontuacao: jogada
+          pontuacao: jogada,
+          rankingParaDesempate: CartaAlta.calcularRankingParaDesempate(maoDoJogador)
         };
       }
     }

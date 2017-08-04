@@ -185,6 +185,54 @@ describe('Croupier', () => {
 
         expect(resultadoDaRodada).toEqual(resultadoEsperado);
       });
+
+      it('no caso de uma dupla', () => {
+        let resultadoEsperado = {
+          ganhador: nomeDoJogador2,
+          pontuacaoDoGanhador: PesoDaJogada.UmaDupla,
+          jogadaDoGanhador: 'UmaDupla'
+        };
+        let cartasJogador1 = LeitorDeCartas.obterCartas('AC AO 4C 3C 2E');
+        let maoDoJogador1 = new MaoDoJogador(nomeDoJogador1, cartasJogador1);
+        let cartasJogador2 = LeitorDeCartas.obterCartas('AO AE 4C 3E 5O');
+        let maoDoJogador2 = new MaoDoJogador(nomeDoJogador2, cartasJogador2);
+
+        let resultadoDaRodada = Croupier.analisarRodada(maoDoJogador1, maoDoJogador2);
+
+        expect(resultadoDaRodada).toEqual(resultadoEsperado);
+      });
+
+      it('no caso de duas duplas', () => {
+        let resultadoEsperado = {
+          ganhador: nomeDoJogador1,
+          pontuacaoDoGanhador: PesoDaJogada.DuasDuplas,
+          jogadaDoGanhador: 'DuasDuplas'
+        };
+        let cartasJogador1 = LeitorDeCartas.obterCartas('AC AP 4C 4P 8E');
+        let maoDoJogador1 = new MaoDoJogador(nomeDoJogador1, cartasJogador1);
+        let cartasJogador2 = LeitorDeCartas.obterCartas('AO AE 3O 3E KO');
+        let maoDoJogador2 = new MaoDoJogador(nomeDoJogador2, cartasJogador2);
+
+        let resultadoDaRodada = Croupier.analisarRodada(maoDoJogador1, maoDoJogador2);
+
+        expect(resultadoDaRodada).toEqual(resultadoEsperado);
+      });
+
+      it('no caso de trinca', () => {
+        let resultadoEsperado = {
+          ganhador: nomeDoJogador2,
+          pontuacaoDoGanhador: PesoDaJogada.Trinca,
+          jogadaDoGanhador: 'Trinca'
+        };
+        let cartasJogador1 = LeitorDeCartas.obterCartas('AC AP AP 2P 3E');
+        let maoDoJogador1 = new MaoDoJogador(nomeDoJogador1, cartasJogador1);
+        let cartasJogador2 = LeitorDeCartas.obterCartas('KO KE KO AE QO');
+        let maoDoJogador2 = new MaoDoJogador(nomeDoJogador2, cartasJogador2);
+
+        let resultadoDaRodada = Croupier.analisarRodada(maoDoJogador1, maoDoJogador2);
+
+        expect(resultadoDaRodada).toEqual(resultadoEsperado);
+      });
     });
   });
 });
