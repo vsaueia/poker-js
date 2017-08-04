@@ -7,5 +7,5 @@ export class PesoDaJogada {
   static Sequencia = 4;
   static Trinca = 3;
   static DuasDuplas = 2;
-  static Dupla = 1;
+  static UmaDupla = 1;
 }

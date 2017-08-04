@@ -6,11 +6,12 @@ import { Flush } from 'modelo/jogadas/flush';
 import { Sequencia } from 'modelo/jogadas/sequencia';
 import { Trinca } from 'modelo/jogadas/trinca';
 import { DuasDuplas } from 'modelo/jogadas/duas-duplas';
+import { UmaDupla } from 'modelo/jogadas/uma-dupla';
 
 export class AvaliadorDeJogadas {
   constructor() {
     this.catalogoDeJogadas = [RoyalStraightFlush, StraightFlush, Quadra, FullHouse,
-      Flush, Sequencia, Trinca, DuasDuplas];
+      Flush, Sequencia, Trinca, DuasDuplas, UmaDupla];
   }
   avaliarJogada(maoDoJogador) {
     for (let i = 0; i < this.catalogoDeJogadas.length; i++) {
