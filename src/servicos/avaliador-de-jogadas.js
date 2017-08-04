@@ -8,8 +8,8 @@ import { Trinca } from 'modelo/jogadas/trinca';
 import { DuasDuplas } from 'modelo/jogadas/duas-duplas';
 import { UmaDupla } from 'modelo/jogadas/uma-dupla';
 import { PesoDaJogada } from 'modelo/jogadas/peso-da-jogada';
+import { CartaAlta } from 'modelo/jogadas/carta-alta';
 
-const CartaAlta = 'CartaAlta';
 export class AvaliadorDeJogadas {
   constructor() {
     this.catalogoDeJogadas = [RoyalStraightFlush, StraightFlush, Quadra, FullHouse,
@@ -26,8 +26,9 @@ export class AvaliadorDeJogadas {
       }
     }
     return {
-      nomeDaJogada: CartaAlta,
-      pontuacao: PesoDaJogada.CartaAlta
+      nomeDaJogada: CartaAlta.Nome,
+      pontuacao: PesoDaJogada.CartaAlta,
+      rankingParaDesempate: CartaAlta.calcularRankingParaDesempate(maoDoJogador)
     };
   }
 }
