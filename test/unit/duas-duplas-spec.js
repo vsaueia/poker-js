@@ -7,15 +7,15 @@ describe('Duas duplas', () => {
     let cartas = LeitorDeCartas.obterCartas('TO TC QC QO 9O');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
-    expect(pesoDaJogada).toBeGreaterThanOrEqual(PesoDaJogada.DuasDuplas);
+    let jogada = maoDoJogador.calcularJogada();
+    expect(jogada.pontuacao).toBeGreaterThanOrEqual(PesoDaJogada.DuasDuplas);
   });
 
   it('nao deve casar com duas duplas', () => {
     let cartas = LeitorDeCartas.obterCartas('TO TC QC KO 9O');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
-    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.DuasDuplas);
+    let jogada = maoDoJogador.calcularJogada();
+    expect(jogada.pontuacao).toBeLessThan(PesoDaJogada.DuasDuplas);
   });
 });

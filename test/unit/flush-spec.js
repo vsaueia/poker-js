@@ -7,17 +7,17 @@ describe('Flush', () => {
     let cartas = LeitorDeCartas.obterCartas('2C 7C QC JC 9C');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
+    let jogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBeGreaterThanOrEqual(PesoDaJogada.Flush);
+    expect(jogada.pontuacao).toBeGreaterThanOrEqual(PesoDaJogada.Flush);
   });
 
   it('nao deve casar com flush', () => {
     let cartas = LeitorDeCartas.obterCartas('2O 7O QO JO 9C');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
+    let jogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.Flush);
+    expect(jogada.pontuacao).toBeLessThan(PesoDaJogada.Flush);
   });
 });

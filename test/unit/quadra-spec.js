@@ -7,26 +7,26 @@ describe('Quadra', () => {
     let cartas = LeitorDeCartas.obterCartas('TP TC TE TO 9O');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
+    let jogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBeGreaterThanOrEqual(PesoDaJogada.Quadra);
+    expect(jogada.pontuacao).toBeGreaterThanOrEqual(PesoDaJogada.Quadra);
   });
 
   it('deve casar com quadra', () => {
     let cartas = LeitorDeCartas.obterCartas('3P 3C 3E 3O 9O');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
+    let jogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBeGreaterThanOrEqual(PesoDaJogada.Quadra);
+    expect(jogada.pontuacao).toBeGreaterThanOrEqual(PesoDaJogada.Quadra);
   });
 
   it('nao deve casar com quadra', () => {
     let cartas = LeitorDeCartas.obterCartas('3P 3C 3E 4O 4O');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
+    let jogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.Quadra);
+    expect(jogada.pontuacao).toBeLessThan(PesoDaJogada.Quadra);
   });
 });

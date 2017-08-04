@@ -1,5 +1,5 @@
 import { Carta } from './carta';
-import { AvaliadorDeJogadas } from './avaliador-de-jogadas';
+import { AvaliadorDeJogadas } from 'servicos/avaliador-de-jogadas';
 
 export class MaoDoJogador {
   constructor(nomeDoJogador, cartas) {

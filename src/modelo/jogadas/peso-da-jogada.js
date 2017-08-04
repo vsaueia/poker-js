@@ -8,4 +8,5 @@ export class PesoDaJogada {
   static Trinca = 3;
   static DuasDuplas = 2;
   static UmaDupla = 1;
+  static CartaAlta = 0;
 }

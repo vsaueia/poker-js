@@ -7,35 +7,35 @@ describe('straight flush', () => {
     let cartas = LeitorDeCartas.obterCartas('TO JO QO KO 9O');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
+    let jogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBeGreaterThanOrEqual(PesoDaJogada.StraightFlush);
+    expect(jogada.pontuacao).toBeGreaterThanOrEqual(PesoDaJogada.StraightFlush);
   });
 
   it('deve casar com straight flush, sequencia menor', () => {
     let cartas = LeitorDeCartas.obterCartas('2O 3O 4O 6O 5O');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
+    let jogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBeGreaterThanOrEqual(PesoDaJogada.StraightFlush);
+    expect(jogada.pontuacao).toBeGreaterThanOrEqual(PesoDaJogada.StraightFlush);
   });
 
   it('nao deve casar com straight flush, cartas nao formam sequencia', () => {
     let cartas = LeitorDeCartas.obterCartas('TO JO QO KO 4O');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
+    let jogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.StraightFlush);
+    expect(jogada.pontuacao).toBeLessThan(PesoDaJogada.StraightFlush);
   });
 
   it('nao deve casar com straight flush, cartas nao sao do mesmo naipe', () => {
     let cartas = LeitorDeCartas.obterCartas('TO JO QO KO 9P');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
+    let jogada = maoDoJogador.calcularJogada();
 
-    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.StraightFlush);
+    expect(jogada.pontuacao).toBeLessThan(PesoDaJogada.StraightFlush);
   });
 });

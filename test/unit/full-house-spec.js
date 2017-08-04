@@ -7,23 +7,23 @@ describe('Full House', () => {
     let cartas = LeitorDeCartas.obterCartas('TP 9C TE 9C TO');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
-    expect(pesoDaJogada).toBeGreaterThanOrEqual(PesoDaJogada.FullHouse);
+    let jogada = maoDoJogador.calcularJogada();
+    expect(jogada.pontuacao).toBeGreaterThanOrEqual(PesoDaJogada.FullHouse);
   });
 
   it('nao deve casar com full house', () => {
     let cartas = LeitorDeCartas.obterCartas('TP 9C TE 9C AO');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
-    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.FullHouse);
+    let jogada = maoDoJogador.calcularJogada();
+    expect(jogada.pontuacao).toBeLessThan(PesoDaJogada.FullHouse);
   });
 
   it('nao deve casar com full house', () => {
     let cartas = LeitorDeCartas.obterCartas('TP TC TE 9C AO');
     let maoDoJogador = new MaoDoJogador('jogador1', cartas);
 
-    let pesoDaJogada = maoDoJogador.calcularJogada();
-    expect(pesoDaJogada).toBeLessThan(PesoDaJogada.FullHouse);
+    let jogada = maoDoJogador.calcularJogada();
+    expect(jogada.pontuacao).toBeLessThan(PesoDaJogada.FullHouse);
   });
 });

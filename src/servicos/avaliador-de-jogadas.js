@@ -7,7 +7,9 @@ import { Sequencia } from 'modelo/jogadas/sequencia';
 import { Trinca } from 'modelo/jogadas/trinca';
 import { DuasDuplas } from 'modelo/jogadas/duas-duplas';
 import { UmaDupla } from 'modelo/jogadas/uma-dupla';
+import { PesoDaJogada } from 'modelo/jogadas/peso-da-jogada';
 
+const CartaAlta = 'CartaAlta';
 export class AvaliadorDeJogadas {
   constructor() {
     this.catalogoDeJogadas = [RoyalStraightFlush, StraightFlush, Quadra, FullHouse,
@@ -17,9 +19,15 @@ export class AvaliadorDeJogadas {
     for (let i = 0; i < this.catalogoDeJogadas.length; i++) {
       let jogada = this.catalogoDeJogadas[i].testarJogada(maoDoJogador);
       if (jogada > 0) {
-        return jogada;
+        return {
+          nomeDaJogada: this.catalogoDeJogadas[i].name,
+          pontuacao: jogada
+        };
       }
     }
-    return 0;
+    return {
+      nomeDaJogada: CartaAlta,
+      pontuacao: PesoDaJogada.CartaAlta
+    };
   }
 }
